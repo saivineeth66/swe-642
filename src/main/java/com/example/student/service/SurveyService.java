@@ -6,6 +6,9 @@ import com.example.student.model.StudentSurvey;
 import java.util.List;
 
 public interface SurveyService {
-    public StudentSurvey saveSurvey(StudentSurvey student);
-    public List<StudentSurvey> getAllStudentSurvey();
+    StudentSurvey saveSurvey(StudentSurvey student);
+    List<StudentSurvey> getAllStudentSurvey();
+
+    void deleteSurvey(int id);
+    StudentSurvey updateSurvey(int id, StudentSurvey studentSurvey);
 }
