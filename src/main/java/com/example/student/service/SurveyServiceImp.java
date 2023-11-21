@@ -57,5 +57,11 @@ public class SurveyServiceImp implements SurveyService {
         return studentRep.save(existingSurvey);
     }
 
+    @Override
+    public StudentSurvey getSurveyById(int id) {
+        return studentRep.findById(id)
+                .orElseThrow(() -> new RuntimeException("Survey not found with id: " + id));
+    }
+
 
 }

@@ -44,7 +44,7 @@ public class SurveyController {
     public ResponseEntity<?> deleteSurvey(@PathVariable int id) {
         try {
             surveyService.deleteSurvey(id);
-            return ResponseEntity.ok("Survey Deleted Successfully");
+            return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("message", "Survey Deleted Successfully"));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error deleting survey");
         }
@@ -60,6 +60,16 @@ public class SurveyController {
         }
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<StudentSurvey> getSurvey(@PathVariable int id){
+        try {
+            StudentSurvey getSurveyById = surveyService.getSurveyById(id);
+            return ResponseEntity.ok(getSurveyById);
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 
 
 }

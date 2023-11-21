@@ -73,5 +73,13 @@ public class StudentSurvey {
     @Getter @Setter
     private String comments;
 
+    @Getter @Setter
+    private String graduationMonth; // Added to match the frontend form
+
+    @Getter @Setter
+    private String graduationYear; // Added to match the frontend form
+    @Getter @Setter
+    private String url; // Added to match the frontend form
+
     // Constructors, getters, and setters
 }

@@ -11,4 +11,6 @@ public interface SurveyService {
 
     void deleteSurvey(int id);
     StudentSurvey updateSurvey(int id, StudentSurvey studentSurvey);
+
+    StudentSurvey getSurveyById(int id);
 }
